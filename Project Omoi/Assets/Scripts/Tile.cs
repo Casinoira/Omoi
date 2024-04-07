@@ -12,11 +12,11 @@ public class Tile : MonoBehaviour
         _renderer.color = isOffset ? _offsetColor : _baseColor;
     }
 
-    // void onMouseEnter() {
-    //     _highlight.setActive(true);
-    // }
+    void OnMouseEnter() {
+        _highlight.SetActive(true);
+    }
 
-    // void OnMouseExit() {
-    //     _highlight.setActive(false);
-    // }
+    void OnMouseExit() {
+        _highlight.SetActive(false);
+    }
 }
