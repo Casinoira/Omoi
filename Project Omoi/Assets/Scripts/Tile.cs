@@ -14,9 +14,19 @@ public class Tile : MonoBehaviour
 
     void OnMouseEnter() {
         _highlight.SetActive(true);
+        // print("Mouse in");
     }
 
     void OnMouseExit() {
         _highlight.SetActive(false);
+        // print("Mouse out");
+    }
+
+    void OnMouseDown() {
+        // if(GameManager.Instance.GameState != GameState.GameStart) return;
+
+        // if (OccupiedUnit != null) {
+
+        // }
     }
 }

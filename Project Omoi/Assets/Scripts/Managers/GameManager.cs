@@ -23,11 +23,12 @@ public class GameManager : MonoBehaviour
 
         switch (newState) {
             case GameState.GenerateGrid:
-                gridManager.Instance.GeneratorGrid();
+                gridManager.Instance.GenerateGrid();
                 break;
             case GameState.GameStart:
                 break;
             case GameState.GameOver:
+                // ballControl.Instance.RestartScene();
                 break;
             case GameState.GameCompleted:
                 break;
