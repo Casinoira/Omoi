@@ -16,6 +16,7 @@ public class Draggable : MonoBehaviour
         isDragging = true;
         mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         spriteDragStartPosition = transform.localPosition;
+
     }
 
     public void OnMouseUp() {
@@ -27,6 +28,17 @@ public class Draggable : MonoBehaviour
         if(isDragging) {
             transform.localPosition = spriteDragStartPosition + Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition;
 
+        }
+    }
+
+    void OnMouseOver() {
+        
+        if (!isDragging) {
+            if (Input.GetMouseButtonDown(1)) {
+                transform.Rotate(0f,0f,-45f);
+
+                print(transform.rotation);
+            } 
         }
     }
 }

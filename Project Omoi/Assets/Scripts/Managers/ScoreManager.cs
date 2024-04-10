@@ -29,8 +29,8 @@ public class ScoreManager : MonoBehaviour
             isMultiplied = true;
             multiplierTimer = Time.deltaTime;
 
-            print("multiplierTime: " + multiplierTimer);
-            print("isMultiplied: " + isMultiplied);
+            // print("multiplierTime: " + multiplierTimer);
+            // print("isMultiplied: " + isMultiplied);
         }
 
         if (ball_Col.gameObject.tag == "MemoryBall") {     
@@ -49,8 +49,8 @@ public class ScoreManager : MonoBehaviour
             }
 
             if (scoreNum != 0) {
-                print("multiplierTime: " + multiplierTimer);
-                print("hit isMultiplied: " + isMultiplied);
+                // print("multiplierTime: " + multiplierTimer);
+                // print("hit isMultiplied: " + isMultiplied);
 
                 scoreText.text = scoreNum.ToString();
 
