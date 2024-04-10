@@ -1551,7 +1551,7 @@ GameObject:
   - component: {fileID: 1550837012}
   m_Layer: 0
   m_Name: Pinball_Frame
-  m_TagString: Untagged
+  m_TagString: PinballFrame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
