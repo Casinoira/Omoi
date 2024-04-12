@@ -6,20 +6,23 @@ using UnityEngine.SceneManagement;
 public class ballControl : MonoBehaviour {
     public AudioSource audioHit;
     public AudioSource audioSpeed;
+    public AudioSource audioMemoryHit;
 
     private void OnCollisionEnter2D(Collision2D ball_Col) {
-        if (ball_Col.gameObject.tag != "PinballFrame") {
+        if (ball_Col.gameObject.tag == "Draggable" || ball_Col.gameObject.tag == "Multiplier" || ball_Col.gameObject.tag == "Undraggable" ) {
+            audioHit.Play();
 
-            if (ball_Col.gameObject.name == "Road_Surface") {
-                audioSpeed.Play();
-
-            } else {
-                audioHit.Play();
-
-            }
-
+        } else if (ball_Col.gameObject.name == "Memory_Ball") {
+            audioMemoryHit.Play();
+            
         }
 
+    }
+    void OnTriggerEnter2D(Collider2D ball_Col) {
+        if (ball_Col.gameObject.name == "Detect_SpeedPass") {
+            audioSpeed.Play();
+
+        }
     }
 
     // void OnTriggerEnter2D(Collider2D collision)

@@ -6,10 +6,10 @@ TagManager:
   tags:
   - MemoryBall
   - PinSlot
-  - Directional_Bumper
   - Multiplier
   - Draggable
   - PinballFrame
+  - Undraggable
   layers:
   - Default
   - TransparentFX

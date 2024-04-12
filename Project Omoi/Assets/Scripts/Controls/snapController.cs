@@ -33,11 +33,11 @@ public class snapController : MonoBehaviour
 
             if (closestSnapPoint != null && closestDistance <= snapRange) {
                 draggable.transform.localPosition = closestSnapPoint.localPosition;
-                print("Snapped!");
+                // print("Snapped!");
 
             } else {
                 // draggable.transform.localPosition = currentSnapPoint;
-                print("Not Snapped");
+                // print("Not Snapped");
             }
 
             // currentSnapPoint = snapPoint.localPosition;
