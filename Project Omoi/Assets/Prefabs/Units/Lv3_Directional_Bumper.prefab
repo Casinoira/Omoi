@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8262105321182927055}
   - component: {fileID: 8598045255846389660}
   - component: {fileID: 2360335682564244347}
+  - component: {fileID: 1522379579509455011}
   - component: {fileID: 5870741049965763157}
-  - component: {fileID: 1036583733174819590}
   m_Layer: 0
-  m_Name: Lv2_Directional_Bumper
+  m_Name: Lv3_Directional_Bumper
   m_TagString: Draggable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: a70ddd950eec97f4b94172ff428dbdb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63ccab5dfd3a2d34095149b234891418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,19 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0.5
---- !u!114 &5870741049965763157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177063759323195684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925881e911cb5554290cd49a3343f799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!249 &1036583733174819590
+--- !u!249 &1522379579509455011
 AreaEffector2D:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -166,6 +154,18 @@ AreaEffector2D:
   m_ForceTarget: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!114 &5870741049965763157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177063759323195684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925881e911cb5554290cd49a3343f799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4902772471962691429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,7 +5075,7 @@ GameObject:
   - component: {fileID: 4407984877589555942}
   - component: {fileID: 5687522235720347236}
   - component: {fileID: 5520602337618157847}
-  - component: {fileID: 2617471849917756500}
+  - component: {fileID: 7413243846131354616}
   m_Layer: 0
   m_Name: Direction_Bounce
   m_TagString: Draggable
@@ -5157,7 +5157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionParticleSystem: {fileID: 14532803102778285}
   spriteRenderer: {fileID: 0}
---- !u!249 &2617471849917756500
+--- !u!249 &7413243846131354616
 AreaEffector2D:
   serializedVersion: 2
   m_ObjectHideFlags: 0

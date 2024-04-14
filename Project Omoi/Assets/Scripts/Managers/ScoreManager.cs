@@ -6,9 +6,11 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TMP_Text scoreText;
+    // public TMP_Text scoreText;
     // public GameObject memoryBall;
-    private int scoreNum;
+    public Image hpCircle;
+    public int totalHP = 100;
+    private int scoreNum, currentHP;
     private float multiplierTimer;
     private bool isMultiplied = false;
 
@@ -17,8 +19,16 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        scoreNum = 100;
-        scoreText.text = scoreNum.ToString();
+        currentHP = 100;
+        // scoreText.text = currentHP.ToString() + "/" + totalHP.ToString();
+        
+        SetHP();
+
+    }
+
+    void SetHP() {
+        hpCircle.fillAmount = (float)currentHP / totalHP;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D ball_Col) {
@@ -43,17 +53,17 @@ public class ScoreManager : MonoBehaviour
             }
             
             if (isMultiplied == true) {
-                scoreNum -= 2;
+                currentHP -= 4;
             }else{
-                scoreNum -= 1;
+                currentHP -= 2;
             }
 
-            if (scoreNum != 0) {
+            if (currentHP != 0) {
                 // print("multiplierTime: " + multiplierTimer);
                 // print("hit isMultiplied: " + isMultiplied);
 
-                scoreText.text = scoreNum.ToString();
-
+                // scoreText.text = currentHP.ToString() + "/" + totalHP.ToString();
+                SetHP();
             }
 
         }

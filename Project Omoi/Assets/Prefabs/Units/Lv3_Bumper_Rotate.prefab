@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4889113357013253701}
   - component: {fileID: 3897655443041935428}
   m_Layer: 0
-  m_Name: Lv2_Bumper_Rotate
+  m_Name: Lv3_Bumper_Rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 1}
+  m_Size: {x: 4.0119977, y: 0.9643073}
   m_EdgeRadius: 0.5
 --- !u!50 &4889113357013253701
 Rigidbody2D:

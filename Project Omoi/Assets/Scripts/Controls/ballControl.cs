@@ -23,6 +23,11 @@ public class ballControl : MonoBehaviour {
             audioSpeed.Play();
 
         }
+
+        if (ball_Col.gameObject.tag == "Draggable") {
+            audioHit.Play();
+
+        } 
     }
 
     // void OnTriggerEnter2D(Collider2D collision)
