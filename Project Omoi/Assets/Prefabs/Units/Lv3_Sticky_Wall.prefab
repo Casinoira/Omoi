@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2608141328462671646}
   - component: {fileID: 1695973060629198617}
   - component: {fileID: 8656098762980873075}
+  - component: {fileID: 98025418495992721}
   m_Layer: 0
   m_Name: Lv3_Sticky_Wall
   m_TagString: Draggable
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6e019920ad3cbe947b20eba391419559, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.8979292, y: 0.77501523}
   m_EdgeRadius: 0.75
+--- !u!114 &98025418495992721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735601039596128754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925881e911cb5554290cd49a3343f799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
