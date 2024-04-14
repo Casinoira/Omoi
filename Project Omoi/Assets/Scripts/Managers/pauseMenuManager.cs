@@ -13,7 +13,8 @@ public class pauseMenuManager : MonoBehaviour
     }
 
     public void Home() {
-        // SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("Home");
+        Time.timeScale = 1;
     }
 
     public void Level1() {
