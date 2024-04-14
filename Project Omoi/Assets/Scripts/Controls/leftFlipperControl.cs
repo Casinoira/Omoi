@@ -8,7 +8,7 @@ public class leftFlipperControl : MonoBehaviour
     private Rigidbody2D myLeftFlipper;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         myLeftFlipper = GetComponent<Rigidbody2D>();
 
