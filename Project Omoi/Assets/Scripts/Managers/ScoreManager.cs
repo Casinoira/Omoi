@@ -66,6 +66,10 @@ public class ScoreManager : MonoBehaviour
                 SetHP();
             }
 
+            // if (currentHP == 0) {
+
+            // }
+
         }
     }
 
