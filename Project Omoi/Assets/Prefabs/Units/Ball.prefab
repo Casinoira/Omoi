@@ -182,9 +182,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpCircle: {fileID: 0}
-  totalHP: 100
   collisionParticleSystem: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  body: {fileID: 2495681768091915028}
+  ballClone: {fileID: 548717237581122245}
+  memoryBall: {fileID: 0}
+  spawnDuration: 5
+  totalHP: 100
+  ballMaxCount: 3
 --- !u!96 &8908599921635629869
 TrailRenderer:
   serializedVersion: 3

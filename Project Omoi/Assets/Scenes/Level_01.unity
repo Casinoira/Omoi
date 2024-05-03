@@ -3676,6 +3676,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7320005319635141810, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
+      propertyPath: memoryBall
+      value: 
+      objectReference: {fileID: 1146176792}
+    - target: {fileID: 7320005319635141810, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
       propertyPath: collisionParticleSystem
       value: 
       objectReference: {fileID: 1998416664}
@@ -4007,7 +4011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3224653819529014014, guid: 0a78acf5a0b14114f8205e692568da78, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3224653819529014014, guid: 0a78acf5a0b14114f8205e692568da78, type: 3}
       propertyPath: m_SortingOrder

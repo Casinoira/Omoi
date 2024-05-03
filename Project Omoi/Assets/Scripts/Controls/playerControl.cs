@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class playerControl : MonoBehaviour
 {
@@ -12,13 +13,13 @@ public class playerControl : MonoBehaviour
     public Rigidbody2D body;
     public BoxCollider2D groundCheck;
     public LayerMask groundMask;
+    public Animator animator;
 
     float xInput;
     float yInput;
 
     void Start()
     {
-        
     }
 
     void Update()
@@ -31,6 +32,7 @@ public class playerControl : MonoBehaviour
         MoveWithInput();
         CheckGround();
         ApplyFriction();
+        AnimationCheck();
     }
 
     void GetInput() {
@@ -56,16 +58,23 @@ public class playerControl : MonoBehaviour
         
         if (Input.GetButtonDown("Jump") && grounded) {
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+            animator.SetBool("isJumping", !grounded);
         }
     }
 
     void CheckGround() {
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
+        animator.SetBool("isJumping", !grounded);
     }
     
     void ApplyFriction() {
         if (grounded && xInput == 0 && body.velocity.y < 0) {
             body.velocity *= groundDecay;
         }
+    }
+
+    void AnimationCheck() {
+        animator.SetFloat("xVelocity", Math.Abs(body.velocity.x));
+        animator.SetFloat("yVelocity", Math.Abs(body.velocity.y));
     }
 }
