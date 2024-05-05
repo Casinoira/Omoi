@@ -161,8 +161,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballMaxCount: 3
   spawnDuration: 5
+  spawnPosX: 0
+  spawnPosY: 0
   ballClone: {fileID: 548717237581122245, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
-  body: {fileID: 2495681768091915028, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
+  multiplierBody: {fileID: 3250325770965451868}
 --- !u!1 &3999556155916632947
 GameObject:
   m_ObjectHideFlags: 0

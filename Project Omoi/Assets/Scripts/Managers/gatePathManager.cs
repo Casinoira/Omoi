@@ -4,39 +4,57 @@ using UnityEngine;
 
 public class gatePathManager : MonoBehaviour
 {
-    [SerializeField] float lockedAngle1 = 0; 
-    [SerializeField] float lockedAngle2 = -58;
-    [SerializeField] int rotationSpeed = 100;
+    // Vector3 currentEulerAngles;
 
-    Vector3 currentEulerAngles;
     public Transform pivotPoint;
-    // private bool isRotateLeft = false;
-    // Update is called once per frame
+    public int rotationSpeed = 100;
+    public float maxRotationAngle = 58.0f, pauseTime = 3f;
+
+    private bool rotatingRight = true;
+    private float timer = 0f;
+
+
     void FixedUpdate()
     {
-        currentEulerAngles += new Vector3(0,0, 2) * Time.deltaTime * rotationSpeed;
-        pivotPoint.localEulerAngles = currentEulerAngles;
+        timer += Time.deltaTime;
 
-        // if (isRotateLeft) {
-        //     currentEulerAngles += new Vector3(0,0, 2) * Time.deltaTime * rotationSpeed;
-        //     pivotPoint.localEulerAngles = currentEulerAngles;
+        if (timer >= pauseTime) {
+            rotatingRight = !rotatingRight;
+            timer = 0.0f;
+        }
 
-        //     if (pivotPoint.eulerAngles.z == lockedAngle1) {
-        //         isRotateLeft = false;
-        //     }
-        // } else if (!isRotateLeft) {
-        //     currentEulerAngles -= new Vector3(0,0, 2) * Time.deltaTime * rotationSpeed;
-        //     pivotPoint.localEulerAngles = currentEulerAngles;
-
-        //     if (pivotPoint.eulerAngles.z == lockedAngle2) {
-        //         isRotateLeft = true;
-        //     }
-        // }
+        if (rotatingRight) {
+            RotateRight();
+        }else {
+            RotateLeft();
+        }
+        // currentEulerAngles += new Vector3(0,0, 2) * Time.deltaTime * rotationSpeed;
+        // pivotPoint.localEulerAngles = currentEulerAngles;
     }
 
-    private void LimitRotation() {
-        // pivotPoint.rotation.eulerAngles.z = Mathf.Clamp(pivotPoint.rotation.eulerAngles.z , lockedAngle2, lockedAngle1);
+    private void RotateRight() {
+        transform.RotateAround(pivotPoint.position, Vector3.forward, rotationSpeed * Time.deltaTime);
 
+        ClampRotation();
+    }
 
+    private void RotateLeft() {
+        transform.RotateAround(pivotPoint.position, Vector3.back, rotationSpeed * Time.deltaTime);
+
+        ClampRotation();
+    }
+
+    private void ClampRotation()
+    {
+        float currentRotation = pivotPoint.eulerAngles.z;
+
+        if (currentRotation > 180.0f)
+        {
+            currentRotation -= 360.0f;
+        }
+
+        float clampedRotation = Mathf.Clamp(currentRotation, -maxRotationAngle, maxRotationAngle);
+
+        // transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, clampedRotation);
     }
 }

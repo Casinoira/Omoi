@@ -17,6 +17,11 @@ public class pauseMenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+        public void NewGame() {
+        SceneManager.LoadScene("World");
+        Time.timeScale = 1;
+    }
+
     public void Level1() {
         SceneManager.LoadScene("Level_01");
         Time.timeScale = 1;

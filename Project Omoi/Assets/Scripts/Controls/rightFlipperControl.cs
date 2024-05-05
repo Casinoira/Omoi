@@ -9,9 +9,14 @@ public class rightFlipperControl : MonoBehaviour
     private JointMotor2D jointMotor;
     private Rigidbody2D myRightFlipper;
 
+    public Collider2D flipperCollider, IgnoredCollider;
+
     void Start() {
         hingeJoint2D = GetComponent<HingeJoint2D>();
         jointMotor = hingeJoint2D.motor;
+
+                
+        Physics2D.IgnoreCollision(flipperCollider, IgnoredCollider, true);
     }
     
     void FixedUpdate()

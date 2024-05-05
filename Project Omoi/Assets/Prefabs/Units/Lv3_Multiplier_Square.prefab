@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7120214350674656856}
   - component: {fileID: 5270332836979798820}
   - component: {fileID: 2849635542584718770}
+  - component: {fileID: -5509517767079403032}
   m_Layer: 0
   m_Name: Lv3_Multiplier_Square
   m_TagString: Multiplier
@@ -146,6 +147,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionParticleSystem: {fileID: 8020298263187139719}
   spriteRenderer: {fileID: 0}
+--- !u!114 &-5509517767079403032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250325770965451868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85f7a0ae22e71d4cbdc8d16acc5b9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballMaxCount: 3
+  spawnDuration: 5
+  spawnPosX: 0
+  spawnPosY: -5
+  ballClone: {fileID: 548717237581122245, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
+  multiplierBody: {fileID: 3250325770965451868}
 --- !u!1 &3999556155916632947
 GameObject:
   m_ObjectHideFlags: 0
