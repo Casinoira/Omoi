@@ -41,8 +41,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Background_Items
+  - Background
   m_SortingLayers:
   - name: Default
     uniqueID: 0

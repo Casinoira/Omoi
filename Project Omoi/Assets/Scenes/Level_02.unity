@@ -1451,6 +1451,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cad5eae256c50c84cae20dd3a7ce255f, type: 3}
+--- !u!1 &1041472305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 548717237581122245, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
+  m_PrefabInstance: {fileID: 2097680877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1048619198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2133,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1336381484}
     m_Modifications:
+    - target: {fileID: 328934769167631160, guid: 4af4c53c0c790a94b858078196b0d69f, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -18.714012
+      objectReference: {fileID: 0}
+    - target: {fileID: 328934769167631160, guid: 4af4c53c0c790a94b858078196b0d69f, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -27.502607
+      objectReference: {fileID: 0}
     - target: {fileID: 4729652549961887956, guid: 4af4c53c0c790a94b858078196b0d69f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.11
@@ -3843,11 +3856,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!198 &1998416664 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7226169717242922409, guid: 0a78acf5a0b14114f8205e692568da78, type: 3}
-  m_PrefabInstance: {fileID: 2887020723083487923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2013238265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4064,22 +4072,6 @@ PrefabInstance:
       propertyPath: audioMemoryHit
       value: 
       objectReference: {fileID: 858043535}
-    - target: {fileID: 7320005319635141810, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
-      propertyPath: hpCircle
-      value: 
-      objectReference: {fileID: 1602201528}
-    - target: {fileID: 7320005319635141810, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7320005319635141810, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
-      propertyPath: memoryBall
-      value: 
-      objectReference: {fileID: 1146176792}
-    - target: {fileID: 7320005319635141810, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
-      propertyPath: collisionParticleSystem
-      value: 
-      objectReference: {fileID: 1998416664}
     - target: {fileID: 7409690214974647564, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
       propertyPath: m_Volume
       value: 0.306
@@ -4392,6 +4384,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6737132910560371091, guid: 0a78acf5a0b14114f8205e692568da78, type: 3}
+      propertyPath: totalHP
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737132910560371091, guid: 0a78acf5a0b14114f8205e692568da78, type: 3}
+      propertyPath: hpCircle
+      value: 
+      objectReference: {fileID: 1602201528}
     - target: {fileID: 7226169717242922409, guid: 0a78acf5a0b14114f8205e692568da78, type: 3}
       propertyPath: playOnAwake
       value: 1
@@ -4476,6 +4476,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1336381484}
     m_Modifications:
+    - target: {fileID: -6689979446813693675, guid: 24d635699034c9742ba8afc7da0fa83c, type: 3}
+      propertyPath: ballClone
+      value: 
+      objectReference: {fileID: 1041472305}
     - target: {fileID: 3250325770965451868, guid: 24d635699034c9742ba8afc7da0fa83c, type: 3}
       propertyPath: m_Name
       value: Lv2_Multiplier_Square

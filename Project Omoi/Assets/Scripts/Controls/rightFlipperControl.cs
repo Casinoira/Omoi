@@ -5,19 +5,25 @@ using UnityEngine;
 public class rightFlipperControl : MonoBehaviour
 {
     public float speed = 0f;
+    private HingeJoint2D hingeJoint2D;
+    private JointMotor2D jointMotor;
     private Rigidbody2D myRightFlipper;
 
-    // Update is called once per frame
+    void Start() {
+        hingeJoint2D = GetComponent<HingeJoint2D>();
+        jointMotor = hingeJoint2D.motor;
+    }
+    
     void FixedUpdate()
     {
         myRightFlipper = GetComponent<Rigidbody2D>();
 
         if (Input.GetKey(KeyCode.D)){
-            myRightFlipper.AddTorque(-speed);
-
+            jointMotor.motorSpeed = -speed;
+            hingeJoint2D.motor = jointMotor;
         } else {
-            myRightFlipper.AddTorque(speed);
-            
+            jointMotor.motorSpeed = speed;
+            hingeJoint2D.motor = jointMotor;
         }   
     }
 }

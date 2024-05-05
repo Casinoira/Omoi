@@ -6,16 +6,13 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    // public TMP_Text scoreText;
-    // public GameObject memoryBall;
-    private int scoreNum, currentHP, ballVelocity, ballCount = 0;
+    private int scoreNum, currentHP, ballVelocity;
 
     public Image hpCircle;
     public ParticleSystem collisionParticleSystem;
-    public Rigidbody2D body;
-    public GameObject ballClone, memoryBall;
-    public float spawnDuration;
-    public int  totalHP = 100, ballMaxCount = 3;
+    public Rigidbody2D ballBody;
+    public GameObject memoryBall;
+    public int  totalHP = 100;
 
     void Start()
     {
@@ -27,19 +24,9 @@ public class ScoreManager : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D ball_Col) {
         var particleEM = collisionParticleSystem.emission;
         var particleDur = collisionParticleSystem.main.duration;
-        ballVelocity = (int)Mathf.Round(body.velocity.magnitude/50);
+        ballVelocity = (int)Mathf.Round(ballBody.velocity.magnitude/50);
 
-        // print("Velocity : " + ballVelocity);
-
-        if (ball_Col.gameObject.tag == "Multiplier"){
-            if(ballCount < ballMaxCount);
-            GameObject tmpBall = Instantiate(ballClone, body.position, Quaternion.identity);
-            ballCount++;
-
-            StartCoroutine(SelfDestructBall(tmpBall));
-        }
-
-        if (ball_Col.gameObject.tag == "MemoryBall") {     
+        if (ball_Col.gameObject.tag == "Player") {     
             particleEM.enabled = true;
             collisionParticleSystem.Play();
 
@@ -54,7 +41,7 @@ public class ScoreManager : MonoBehaviour
                 SetHP();
             }
 
-            if (currentHP == 0) {
+            if (currentHP <= 0) {
                 Destroy(memoryBall);
             }
 
@@ -66,10 +53,4 @@ public class ScoreManager : MonoBehaviour
         
     }
 
-    IEnumerator SelfDestructBall(GameObject prefabBall) {
-        yield return new WaitForSeconds(spawnDuration);
-
-        Destroy(prefabBall);
-        ballCount--;
-    }
 }

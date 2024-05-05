@@ -3603,6 +3603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 548717237581122245, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1606864261599917222, guid: a4de04357050b5e4bbd8b83cc0d30c10, type: 3}
       propertyPath: m_Sprite
       value: 
