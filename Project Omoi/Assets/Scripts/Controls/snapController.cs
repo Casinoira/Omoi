@@ -41,16 +41,16 @@ public class snapController : MonoBehaviour
 
             float currentDistance = Vector2.Distance(draggable.transform.localPosition, snapPoint.localPosition);
             
-            if (currentDistance < closestDistance && currentDistance <= snapRange) {
-                if (snappedObjects[snapPoint] == null) {
-                    closestSnapPoint = snapPoint;
-                    closestDistance = currentDistance;
-                }
+            if (currentDistance < closestDistance && currentDistance <= snapRange && snappedObjects[snapPoint] == null) {
+                closestSnapPoint = snapPoint;
+                closestDistance = currentDistance;
 
             }
         }
 
             if (closestSnapPoint != null) {
+                ReleaseSnapPoint(draggable);
+                
                 draggable.transform.localPosition = closestSnapPoint.localPosition;
                 initialPositions[draggable] = closestSnapPoint.position;
                 snappedObjects[closestSnapPoint] = draggable;
@@ -64,4 +64,15 @@ public class snapController : MonoBehaviour
 
     }
 
+    private void ReleaseSnapPoint(Draggable draggable)
+    {
+        foreach (var pair in snappedObjects)
+        {
+            if (pair.Value == draggable)
+            {
+                snappedObjects[pair.Key] = null;
+                break;
+            }
+        }
+    }
 }

@@ -1243,13 +1243,12 @@ MonoBehaviour:
   - {fileID: 1235491531}
   - {fileID: 1212152666}
   - {fileID: 2057367512}
-  - {fileID: 0}
   - {fileID: 1440946515}
   - {fileID: 288334637}
   - {fileID: 829620453}
   - {fileID: 1904622758}
   - {fileID: 967808224}
-  snapRange: 5
+  snapRange: 3
 --- !u!114 &967808224 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 619691397930806830, guid: abff91f8739da6f4293dec0b8428e2f5, type: 3}
