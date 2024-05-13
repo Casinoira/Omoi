@@ -18,6 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_03.unity
     guid: 2fcb0e15167358f4891cce302ee2abda
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/UI Main Menu.unity
     guid: 13a698dd442221e4396551ef98d556a0
+=======
+    path: Assets/Scenes/Main Menu UI.unity
+    guid: 1a2abeb11af59ec4ab2cfb06df3fcdbf
+>>>>>>> Stashed changes
   m_configObjects: {}
