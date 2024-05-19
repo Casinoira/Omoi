@@ -75,6 +75,6 @@ public class playerControl : MonoBehaviour
 
     void AnimationCheck() {
         animator.SetFloat("xVelocity", Math.Abs(body.velocity.x));
-        animator.SetFloat("yVelocity", Math.Abs(body.velocity.y));
+        animator.SetFloat("yVelocity", body.velocity.y);
     }
 }

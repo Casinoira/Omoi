@@ -7,7 +7,7 @@ public class Mainme : MonoBehaviour
 {
     public void PlayGame()
 	{
-		SceneManager. LoadSceneAsync("World");
+		SceneManager.LoadSceneAsync("World");
 	}
 }
 

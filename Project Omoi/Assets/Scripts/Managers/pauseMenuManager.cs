@@ -47,6 +47,10 @@ public class pauseMenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void LeaveLevel() {
+        SceneManager.LoadScene("World");
+    }
+
     public void Exit() {
         Application.Quit();
     }

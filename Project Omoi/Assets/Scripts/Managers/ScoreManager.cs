@@ -25,22 +25,21 @@ public class ScoreManager : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D ball_Col) {
         var particleEM = collisionParticleSystem.emission;
         var particleDur = collisionParticleSystem.main.duration;
-        ballVelocity = (int)Mathf.Round(ballBody.velocity.magnitude/50);
+        ballVelocity = Mathf.RoundToInt(ballBody.velocity.magnitude/60);
 
         if (ball_Col.gameObject.tag == "Player") {     
             particleEM.enabled = true;
             collisionParticleSystem.Play();
 
-            
             if (currentHP < totalHP / 2) {
-                currentHP -= (ballVelocity + 3);
-            } else {
                 currentHP -= (ballVelocity + 1);
-
+            } else {
+                currentHP -= (ballVelocity);
             }
 
+            // print("preVelocity: " + Mathf.RoundToInt(ballBody.velocity.magnitude / Mathf.Log10(10)));
             print("ballVelocity: " + ballVelocity);
-            print("ballVelocity: " + currentHP);
+            print("currentHP: " + currentHP);
 
             if (currentHP != 0) {
                 SetHP();
@@ -48,7 +47,7 @@ public class ScoreManager : MonoBehaviour
 
             if (currentHP <= 0) {
                 Destroy(memoryBall);
-                SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+                // SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
             }
 
         }
