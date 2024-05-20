@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 40061609}
   - component: {fileID: 40061608}
   m_Layer: 5
-  m_Name: Play But (3)
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 528750407}
   - component: {fileID: 528750406}
   m_Layer: 5
-  m_Name: Play But (2)
+  m_Name: Guide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 668290971}
   - component: {fileID: 668290970}
   m_Layer: 5
-  m_Name: Play But (1)
+  m_Name: Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 1568575380}
   - component: {fileID: 1568575379}
   m_Layer: 5
-  m_Name: Play But
+  m_Name: Play_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
