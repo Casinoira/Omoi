@@ -47,3 +47,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Pinball_Elements
+    uniqueID: 491041431
+    locked: 0
