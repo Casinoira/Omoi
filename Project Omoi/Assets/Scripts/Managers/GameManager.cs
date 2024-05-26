@@ -1,74 +1,82 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject playerObject; // Reference to the player object
-    private Vector3 lastPlayerPosition;
-    private bool isWorldScene;
+    // public GameObject playerObject; // Reference to the player object
+    // private Vector3 lastPlayerPosition;
+    // private bool isWorldScene;
 
-    void Start()
-    {
-        // Check if the player object is assigned
-        isWorldScene = playerObject != null;
+    public static GameManager Instance;
 
-        // Load the game state only if the player object is assigned (i.e., if it's the World scene)
-        if (isWorldScene)
+    public GameState State;
+    public GameObject Player;
+
+    public Vector2 playerSavePosition;
+
+    public static event Action<GameState> OnGameStateChanged;
+
+    void Awake() {
+        if (Instance == null)
         {
-            LoadGameState();
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
-    public void SavePlayerPosition(Vector3 position)
-    {
-        // Save the player's position only if the current scene is the World scene
-        if (isWorldScene)
-        {
-            lastPlayerPosition = position;
-        }
+    void Start() {
+        UpdateGameState(GameState.NewGame);
     }
 
-    public void LoadLastPlayerPosition()
-    {
-        // Load the player's last position only if the current scene is the World scene
-        if (isWorldScene)
-        {
-            if (playerObject != null)
-            {
-                playerObject.transform.position = lastPlayerPosition;
-            }
+    public void UpdateGameState(GameState newState) {
+        State = newState;
+
+        switch(newState) {
+            case GameState.NewGame:
+                playerSavePosition = new Vector2(-73f, -37f);
+                break;
+            case GameState.Level01:
+                break;
+            case GameState.Level02:
+                break;
+            case GameState.Level03:
+                break;
+            case GameState.EndGame:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
+
+        OnGameStateChanged?.Invoke(newState);
     }
 
-    public void CompleteLevel()
-    {
-        // Save the game state when the player completes a level
-        SaveGameState();
-
-        // Load back to the World scene
-        SceneManager.LoadScene("World");
+    public void LoadNewGame() {
+        UpdateGameState(GameState.Level01);
     }
 
-    // Other methods for saving/loading game state...
-
-    void SaveGameState()
+    public void MovePlayerToSavedPosition()
     {
-        // Save the player's position only if the current scene is the World scene
-        if (isWorldScene)
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
         {
-            if (playerObject != null)
-            {
-                SavePlayerPosition(playerObject.transform.position);
-            }
+            playerObject.transform.position = playerSavePosition;
         }
+
+        Debug.Log("Player is moved");
     }
 
-    void LoadGameState()
-    {
-        // Load the player's last position only if the current scene is the World scene
-        if (isWorldScene)
-        {
-            LoadLastPlayerPosition();
-        }
+    public enum GameState {
+        NewGame,
+        Level01,
+        Level02,
+        Level03,
+        EndGame
     }
 }

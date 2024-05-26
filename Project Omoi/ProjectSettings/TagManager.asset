@@ -50,3 +50,6 @@ TagManager:
   - name: Pinball_Elements
     uniqueID: 491041431
     locked: 0
+  - name: Transition
+    uniqueID: 4266053255
+    locked: 0

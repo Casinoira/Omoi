@@ -5,40 +5,45 @@ using UnityEngine.SceneManagement;
 
 public class pauseMenuManager : MonoBehaviour
 {
-    [SerializeField] public GameObject pauseMenu;
+    [SerializeField] public GameObject pauseMenu, pauseButton;
 
-    public void Pause() {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0;
-    }
+    // public void LoadGame() {
+    //     // gameManager.LoadGame();
+    // }
+
+    // public void SaveGame() {
+    //     // gameManager.SaveGame();
+    // }
+
+    // public void Level1() {
+    //     SceneManager.LoadScene("Level_01");
+    //     Time.timeScale = 1;
+    // }
+
+    // public void Level2() {
+    //     SceneManager.LoadScene("Level_02");
+    //     Time.timeScale = 1;
+    // }
+    
+    // public void Level3() {
+    //     SceneManager.LoadScene("Level_03");
+    //     Time.timeScale = 1;
+    // }
 
     public void Home() {
         SceneManager.LoadScene("Home");
         Time.timeScale = 1;
     }
-
-        public void NewGame() {
-        SceneManager.LoadScene("World");
-        Time.timeScale = 1;
-    }
-
-    public void Level1() {
-        SceneManager.LoadScene("Level_01");
-        Time.timeScale = 1;
-    }
-
-    public void Level2() {
-        SceneManager.LoadScene("Level_02");
-        Time.timeScale = 1;
-    }
     
-    public void Level3() {
-        SceneManager.LoadScene("Level_03");
-        Time.timeScale = 1;
+    public void Pause() {
+        pauseMenu.SetActive(true);
+        pauseButton.SetActive(false);
+        Time.timeScale = 0;
     }
 
     public void Resume() {
         pauseMenu.SetActive(false);
+        pauseButton.SetActive(true);
         Time.timeScale = 1;
     }
 
@@ -51,7 +56,4 @@ public class pauseMenuManager : MonoBehaviour
         SceneManager.LoadScene("World");
     }
 
-    public void Exit() {
-        Application.Quit();
-    }
 }

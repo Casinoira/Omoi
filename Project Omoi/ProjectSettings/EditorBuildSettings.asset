@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Home.unity
-    guid: d6b4354765aebdd45b26f2fe89d99357
+    path: Assets/Scenes/UI/StartScreen.unity
+    guid: 9b1daf60c3a721b4bafad6978e356632
   - enabled: 1
     path: Assets/Scenes/World.unity
     guid: a4c09512143ac1b41b1339f876ebe431
@@ -21,13 +21,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_03.unity
     guid: 2fcb0e15167358f4891cce302ee2abda
   - enabled: 1
-    path: Assets/Scenes/UI/Main Menu UI.unity
-    guid: 9b1daf60c3a721b4bafad6978e356632
+    path: Assets/Scenes/CutScene/Lvl_01_Cutscene.unity
+    guid: 91979edc40c4d684a98dbdcdc8a7418e
   - enabled: 1
-    path: Assets/Scenes/UI/Pause Menu.unity
-    guid: cb4828214c504ea42b696f3b7735edaf
+    path: Assets/Scenes/CutScene/Lvl_02_Cutscene.unity
+    guid: 3b35da542174ce04da0df1004d8d4c5d
   - enabled: 1
-    path: Assets/Scenes/UI/Credits Menu.unity
+    path: Assets/Scenes/CutScene/Lvl_03_Cutscene.unity
+    guid: b350d17f777fb6c4a8abc019929366c6
+  - enabled: 1
+    path: Assets/Scenes/UI/Credits.unity
     guid: 1f605f5f333297948aca9d1a58273287
   - enabled: 1
     path: Assets/Scenes/UI/Guide.unity
