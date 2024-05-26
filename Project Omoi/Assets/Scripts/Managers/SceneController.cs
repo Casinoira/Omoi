@@ -135,7 +135,7 @@ public class SceneController : MonoBehaviour
                 break;
 
             case "Lvl_03_Cutscene":
-                yield return new WaitForSeconds(54f);
+                yield return new WaitForSeconds(51f);
                 GameManager.Instance.UpdateGameState(GameManager.GameState.EndGame);
                 break;
 
