@@ -52,8 +52,19 @@ public class pauseMenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void GuideScreen() {
+        SceneManager.LoadScene("Guide2");
+        Time.timeScale = 1;
+    }
+
     public void LeaveLevel() {
-        SceneManager.LoadScene("World");
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        
+        // if(activeSceneName == "World") {
+        SceneManager.LoadScene("StartScreen");
+        // }else {
+            // SceneManager.LoadScene("World");
+        // }
     }
 
 }
