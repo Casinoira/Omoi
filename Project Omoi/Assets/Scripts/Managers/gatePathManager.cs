@@ -4,57 +4,37 @@ using UnityEngine;
 
 public class gatePathManager : MonoBehaviour
 {
-    // Vector3 currentEulerAngles;
-
     public Transform pivotPoint;
     public int rotationSpeed = 100;
-    public float maxRotationAngle = 58.0f, pauseTime = 3f;
+    public float maxRotationAngle = 30.0f, pauseTime = 3f;
 
     private bool rotatingRight = true;
-    private float timer = 0f;
 
-
-    void FixedUpdate()
+    void Start()
     {
-        timer += Time.deltaTime;
-
-        if (timer >= pauseTime) {
-            rotatingRight = !rotatingRight;
-            timer = 0.0f;
-        }
-
-        if (rotatingRight) {
-            RotateRight();
-        }else {
-            RotateLeft();
-        }
-        // currentEulerAngles += new Vector3(0,0, 2) * Time.deltaTime * rotationSpeed;
-        // pivotPoint.localEulerAngles = currentEulerAngles;
+        StartCoroutine(RotateGate());
     }
 
-    private void RotateRight() {
-        transform.RotateAround(pivotPoint.position, Vector3.forward, rotationSpeed * Time.deltaTime);
-
-        ClampRotation();
-    }
-
-    private void RotateLeft() {
-        transform.RotateAround(pivotPoint.position, Vector3.back, rotationSpeed * Time.deltaTime);
-
-        ClampRotation();
-    }
-
-    private void ClampRotation()
+    IEnumerator RotateGate()
     {
-        float currentRotation = pivotPoint.eulerAngles.z;
-
-        if (currentRotation > 180.0f)
+        while (true)
         {
-            currentRotation -= 360.0f;
+            float targetAngle = rotatingRight ? maxRotationAngle : -maxRotationAngle;
+            Quaternion startRotation = transform.rotation;
+            Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle) * startRotation;
+
+            float angleMoved = 0;
+            while (angleMoved < Mathf.Abs(maxRotationAngle))
+            {
+                float angle = rotationSpeed * Time.deltaTime;
+                transform.RotateAround(pivotPoint.position, Vector3.forward, angle * (rotatingRight ? 1 : -1));
+                angleMoved += angle;
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(pauseTime);
+
+            rotatingRight = !rotatingRight;
         }
-
-        float clampedRotation = Mathf.Clamp(currentRotation, -maxRotationAngle, maxRotationAngle);
-
-        // transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, clampedRotation);
     }
 }

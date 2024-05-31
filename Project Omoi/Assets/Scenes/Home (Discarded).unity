@@ -1911,6 +1911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1001 &7865492784419161321
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5579f47ff7f7344a4ec0555c1f9485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pivotPoint: {fileID: 5871650972176378264}
   rotationSpeed: 120
   maxRotationAngle: 58
   pauseTime: 3
-  pivotPoint: {fileID: 5871650972176378264}
