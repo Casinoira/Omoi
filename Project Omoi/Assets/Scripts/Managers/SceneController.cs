@@ -9,9 +9,9 @@ public class SceneController : MonoBehaviour
     public static SceneController Instance;
     public Animator transition;
     public float transitionTime = 1f;
-
     public GameObject memoryBall, Tower1, Tower2;
     public VideoPlayer videoPlayer;
+    public DialogueTrigger dialogueTrigger;
 
     private string activeSceneName;
     private Animator TowerAnim1, TowerAnim2;
@@ -21,7 +21,7 @@ public class SceneController : MonoBehaviour
     void Awake()
     {
         Debug.Log("I'm Awake Scene");
-        TowerOpen();
+        activeSceneName = SceneManager.GetActiveScene().name;
 
         if (videoPlayer != null) {
             Debug.Log("Starting video playback...");
@@ -30,6 +30,14 @@ public class SceneController : MonoBehaviour
             // LoadWorldLevel();
         }
 
+    }
+
+    void Start() {
+        PlayDialogue();
+        TowerOpen();
+        if (activeSceneName == "World") {
+            GameManager.Instance.MovePlayerToSavedPosition();
+        }
     }
 
     void Update() {     
@@ -60,12 +68,27 @@ public class SceneController : MonoBehaviour
 
     }
 
-    public void TowerOpen() {
-        activeSceneName = SceneManager.GetActiveScene().name;
-
+    public void PlayDialogue() {
         if (activeSceneName == "World") {
-            GameManager.Instance.MovePlayerToSavedPosition();
+            switch (GameManager.Instance.State) {
+                case GameManager.GameState.Level01:
+                    // Debug.Log("Activate Dialogue Trigger");
+                    dialogueTrigger.TriggerDialogue("Awakening");
+                    break;
+                case GameManager.GameState.Level02:
+                    dialogueTrigger.TriggerDialogue("Memory1Complete");
+                    break;
+                case GameManager.GameState.Level03:
+                    dialogueTrigger.TriggerDialogue("Memory2Complete");
+                    break;
+                default:
 
+                    break;
+            }
+        }
+    }
+    public void TowerOpen() {
+        if (activeSceneName == "World") {
             TowerAnim1 = Tower1.GetComponent<Animator>();
             TowerAnim2 = Tower2.GetComponent<Animator>();
 
@@ -77,7 +100,6 @@ public class SceneController : MonoBehaviour
 
             switch (GameManager.Instance.State) {
                 case GameManager.GameState.Level01:
-                    // Handle Level 01 state
                     break;
 
                 case GameManager.GameState.Level02:
@@ -93,7 +115,6 @@ public class SceneController : MonoBehaviour
                     break;
 
                 case GameManager.GameState.EndGame:
-                    // Handle EndGame state
                     break;
 
                 default:
@@ -101,7 +122,7 @@ public class SceneController : MonoBehaviour
             }
         }
 
-        Debug.Log("Open Sesame");
+        // Debug.Log("Open Sesame");
 
     }
 

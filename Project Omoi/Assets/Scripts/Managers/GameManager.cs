@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     public GameState State;
     public GameObject Player;
-
     public Vector2 playerSavePosition;
 
     public static event Action<GameState> OnGameStateChanged;
@@ -41,6 +40,7 @@ public class GameManager : MonoBehaviour
         switch(newState) {
             case GameState.NewGame:
                 playerSavePosition = new Vector2(-73f, -37f);
+                
                 break;
             case GameState.Level01:
                 break;

@@ -14,6 +14,7 @@ public class playerControl : MonoBehaviour
     public BoxCollider2D groundCheck;
     public LayerMask groundMask;
     public Animator animator;
+    public DialogueManager dialogueManager;
 
     float xInput;
     float yInput;
@@ -24,8 +25,10 @@ public class playerControl : MonoBehaviour
 
     void Update()
     {
-        GetInput();
-        Handlejump();
+        if (dialogueManager.isDialoguing == false) {
+            GetInput();
+            Handlejump();
+        }
     }
 
     void FixedUpdate() {
@@ -47,6 +50,10 @@ public class playerControl : MonoBehaviour
             float newSpeed = Mathf.Clamp(body.velocity.x + increment, -groundSpeed, groundSpeed);
 
             body.velocity = new Vector2(xInput * groundSpeed, body.velocity.y);
+
+            if (dialogueManager.isDialoguing == true) {
+                body.velocity = new Vector2(0, body.velocity.y);
+            }
 
             float direction = Mathf.Sign(xInput);
             transform.localScale = new Vector3(direction, 1, 1);
