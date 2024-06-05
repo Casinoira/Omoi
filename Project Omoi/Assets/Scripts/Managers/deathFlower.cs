@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class deathFlower : MonoBehaviour
 {
-    public float hoverHeight = 0.5f; 
-    public float hoverSpeed = 1f;
+    public float hoverDistance = 0.5f,  hoverSpeed = 1f; 
+    public float bounceHeight = 0.2f, bounceFrequencyMultiplier = 2f;
+    public bool isHorizontal = false;
+
 
     private Vector2 startPos;
 
@@ -17,9 +19,21 @@ public class deathFlower : MonoBehaviour
 
     void Update()
     {
-        float newY = startPos.y + Mathf.Sin(Time.time * hoverSpeed) * hoverHeight;
+        float horizontalHoverValue = Mathf.Sin(Time.time * hoverSpeed) * hoverDistance;
+        float verticalHoverValue = Mathf.Sin(Time.time * hoverSpeed * bounceFrequencyMultiplier) * bounceHeight;
 
-        transform.position = new Vector2(transform.position.x, newY);
+        Vector2 newPosition;
+
+        if (isHorizontal)
+        {
+             newPosition = new Vector2(startPos.x + horizontalHoverValue, startPos.y + verticalHoverValue);
+        }
+        else
+        {
+            newPosition = new Vector2(transform.position.x, startPos.y + horizontalHoverValue + verticalHoverValue);
+        }
+
+        transform.position = newPosition;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

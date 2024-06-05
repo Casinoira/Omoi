@@ -133,5 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929cc27bc19db434ea189732e0492f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverHeight: 0.2
+  hoverDistance: 0.5
   hoverSpeed: 2
+  bounceHeight: 0.2
+  bounceFrequencyMultiplier: 5
+  isHorizontal: 0
