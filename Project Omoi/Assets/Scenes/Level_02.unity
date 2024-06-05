@@ -653,6 +653,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78d6842867b0dcf4583b74688c649521, type: 3}
+--- !u!114 &397847124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3897655443041935428, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+  m_PrefabInstance: {fileID: 1919561446}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925881e911cb5554290cd49a3343f799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &397847128 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+  m_PrefabInstance: {fileID: 1919561446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &420023748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1258,6 +1274,7 @@ MonoBehaviour:
   - {fileID: 829620453}
   - {fileID: 1904622758}
   - {fileID: 967808224}
+  - {fileID: 397847124}
   snapRange: 3
   trayCollider: {fileID: 787137704}
 --- !u!1001 &941908316
@@ -2317,6 +2334,7 @@ Transform:
   - {fileID: 2057367515}
   - {fileID: 1826945586}
   - {fileID: 93219226}
+  - {fileID: 397847128}
   - {fileID: 288334640}
   - {fileID: 829620456}
   - {fileID: 1904622761}
@@ -3661,6 +3679,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 139983549898579444, guid: abff91f8739da6f4293dec0b8428e2f5, type: 3}
   m_PrefabInstance: {fileID: 2146395234}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1919561446
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1336381484}
+    m_Modifications:
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -63.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -23.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877906956421145038, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889113357013253701, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334754666595562896, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_Name
+      value: Lv2_Bumper_Rotate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334754666595562896, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
+      propertyPath: m_TagString
+      value: Undraggable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42b1235bbb410474784f6b72f002a757, type: 3}
 --- !u!1 &1934684706
 GameObject:
   m_ObjectHideFlags: 0
